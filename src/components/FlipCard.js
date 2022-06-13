@@ -12,6 +12,8 @@ export default function FlipCard({
 	zIndex = 0,
 	height = 300,
 	width = 300,
+	frontQuote = false,
+	backQuote = false,
 }
 ) {	
 
@@ -46,10 +48,20 @@ export default function FlipCard({
 			backfaceVisibility: "hidden",
 			position: "absolute",
 			backgroundColor: bgColor,
+			padding: "1rem",
 			transform: `rotate${direction}(${calcDegrees(flipped)}deg)`}}
 	  >
-	    <Card.Title>{title}</Card.Title>
-		{body}
+		{!backQuote && ( <>
+			<Card.Title>{backTitle}</Card.Title>
+			{backBody}
+			</>
+		)}
+		{backQuote && (
+			<blockquote class="blockquote" style={{fontSize: "1rem"}}>
+				<p>“{backBody}”</p>
+				<footer class="blockquote-footer text-center mt-1">{backTitle}</footer>
+			</blockquote>
+		)}
 	  </Card>
 
 	  <Card 
@@ -60,10 +72,20 @@ export default function FlipCard({
 			backfaceVisibility: "hidden",
 			position: "absolute",
 			backgroundColor: bgColor,
+			padding: "1rem",
 			transform: `rotate${direction}(${calcDegrees(!flipped)}deg)`}}
 	  >
-	    <Card.Title>{backTitle}</Card.Title>
-		{backBody}
+		{!frontQuote && ( <>
+			<Card.Title>{title}</Card.Title>
+			{body}
+			</>
+		)}
+		{frontQuote && (
+			<blockquote class="blockquote" style={{fontSize: "1rem"}}>
+				<p>“{body}”</p>
+				<footer class="blockquote-footer text-center mt-1">{backTitle}</footer>
+			</blockquote>
+		)}
 	  </Card>
 	</div>
 	)

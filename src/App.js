@@ -127,8 +127,29 @@ function App() {
 		sticky={{start: learningStart + 0.5, end: learningStart + 2}}
 		className="flex-center text-light"
 		>
-		<FlipCard body="Application of quote" title="Explanation" backTitle="Philosopher" backBody="Quote" /> 
-		<FlipCard body="Application of quote" title="Explanation" backTitle="Philosopher" backBody="Quote" /> 
+		<FlipCard
+			body={<p>The type of learning I'm talking about includes academic study, but goes far beyond it.
+			Anything that increases one's <strong>knowledge</strong> or <strong>skills</strong> is a source of learning.
+			Examples include intellectual reasoning, studies, personal experiences,
+			close relationships, suffering, etc.</p>}
+			title="What is learning?"
+			backQuote={true}
+			backTitle="Simone Weil"
+			backBody="[Academic students] are NO NEARER to goodness than their brothers working in fields and factories.
+			Peasants and workmen possess a nearness to God of incomparable savor which is found in the depths of poverty,
+			in the absence of social consideration and in the endurance of long drawn-out sufferings." /> 
+		
+		<FlipCard
+			title="Learning is its own reward"
+			body="Marcus Aurelius claims that learning
+			always leads to a more satisfying, pleasing outlook on the universe."
+			backQuote={true}
+			backBody="[I]f a man should have a feeling and deeper insight with respect to the things which are provided in the universe,
+			there is hardly one of those which follow by way of consquenece which will not seem to him to be in a manner
+			disposed as to give pleasure.... [E]ven the real gaping jaws of wild beasts."
+			backTitle="Marcus Aurelius"
+		/> 
+		
 		<FlipCard body="Application of quote" title="Explanation" backTitle="Philosopher" backBody="Quote" /> 
 		
 		</ParallaxLayer>
