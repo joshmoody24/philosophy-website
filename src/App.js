@@ -8,6 +8,8 @@ import { useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import FlipCard from './components/FlipCard';
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 function App() {
 	
@@ -72,7 +74,11 @@ function App() {
 		sticky={{start: introStart + 3, end: introStart + 5.5}}
 		className="p-5"
 		>
+		<OverlayTrigger placement="bottom" overlay={
+			<Tooltip>The inner sense of being at perfect harmony with the universe. Could be described as a "fulness of joy."</Tooltip>
+		}>
 		<h1 className="display-1 text-center w-100">The Good: Inner Peace</h1>
+		</OverlayTrigger>
 		</ParallaxLayer>
 		
 		<ParallaxLayer
@@ -108,7 +114,7 @@ function App() {
 		>
 		<Card style={{borderRadius:0,width:"100%",height:"100%",backgroundColor:"black",color:"white", display:"flex",alignItems:"center",justifyContent:"center"}}>
 		<Card.Title>3</Card.Title>
-		Help as many people as possible do this
+		Help other people do these things
 		<br />
 		<i className="bi bi-arrow-left"></i>
 		</Card>
@@ -135,7 +141,7 @@ function App() {
 			title="What is learning?"
 			backQuote={true}
 			backTitle="Simone Weil"
-			backBody="[Academic students] are NO NEARER to goodness than their brothers working in fields and factories.
+			backBody="[Academic students] are no nearer to goodness than their brothers working in fields and factories.
 			Peasants and workmen possess a nearness to God of incomparable savor which is found in the depths of poverty,
 			in the absence of social consideration and in the endurance of long drawn-out sufferings." /> 
 		
