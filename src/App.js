@@ -17,7 +17,7 @@ function App() {
 	
 	const start = 0;
 	const introDuration = 7;
-	const learningDuration = 7;
+	const learningDuration = 6;
 	const masteryDuration = 7;
 	const helpingDuration = 7;
 	const conclusionDuration = 7;
@@ -32,11 +32,11 @@ function App() {
 	const conclusionStart = helpingStart + helpingDuration + buffer;
 	const end = conclusionStart + conclusionDuration;
 
-	console.log(learningStart, masteryStart);
+	const totalDuration = end - start;
 	
 	return (
 		<div className="App">
-		<Parallax pages={100} ref={ref}>
+		<Parallax pages={totalDuration} ref={ref}>
 
 		{/* INTRODUCTION SECTION */}
 		
@@ -123,14 +123,14 @@ function App() {
 		{/* LEARNING SECTION */}
 
 		<ParallaxLayer
-		sticky={{start: learningStart, end: learningStart + 2}}
+		sticky={{start: learningStart, end: learningStart + 1.95}}
 		className="p-5"
 		>
 		<h1 className="display-1 text-center w-100">1. Learn as much as possible</h1>
 		</ParallaxLayer>
 		
 		<ParallaxLayer
-		sticky={{start: learningStart + 0.5, end: learningStart + 2}}
+		sticky={{start: learningStart + 0.5, end: learningStart + 1.5}}
 		className="flex-center text-light"
 		>
 		<FlipCard
@@ -152,13 +152,48 @@ function App() {
 			backQuote={true}
 			backBody="[I]f a man should have a feeling and deeper insight with respect to the things which are provided in the universe,
 			there is hardly one of those which follow by way of consquenece which will not seem to him to be in a manner
-			disposed as to give pleasure.... [E]ven the real gaping jaws of wild beasts."
+			disposed as to give pleasure&hellip;even the real gaping jaws of wild beasts."
 			backTitle="Marcus Aurelius"
 		/> 
 		
 		<FlipCard body="Application of quote" title="Explanation" backTitle="Philosopher" backBody="Quote" /> 
 		
 		</ParallaxLayer>
+
+		<ParallaxLayer
+		sticky={{start: learningStart + 2.2, end: learningStart + 3.2}}
+		className="p-5"
+		>
+		<h1 className="display-1 text-center w-100">The importance of faith and humility</h1>
+		</ParallaxLayer>
+
+		<ParallaxLayer
+			offset={learningStart + 2.2}
+			speed={.05}
+			factor={2}
+			style={{backgroundColor:"red"}}
+			className="flex-center"
+		>
+			New content
+		</ParallaxLayer>
+
+		<ParallaxLayer
+		sticky={{start: learningStart + 3.5, end: learningStart + 4.3}}
+		className="p-5"
+		>
+		<h1 className="display-1 text-center w-100">Personal Application</h1>
+		</ParallaxLayer>
+
+		<ParallaxLayer
+			offset={learningStart + 3.5}
+			speed={.05}
+			factor={2}
+			style={{backgroundColor:"blue"}}
+			className="flex-center"
+		>
+			Personal Example
+		</ParallaxLayer>
+
 
 		{/* SELF-MASTERY SECTION */}
 
@@ -170,9 +205,21 @@ function App() {
 		</ParallaxLayer>
 
 		{/* HELPING OTHERS SECTION */}
-
+		<ParallaxLayer
+		sticky={{start: helpingStart, end: helpingStart + 5.5}}
+		className="p-5"
+		>
+		<h1 className="display-1 text-center w-100">3. Help Others</h1>
+		</ParallaxLayer>
 		
 		{/* CONCLUSION SECTION */}
+
+		<ParallaxLayer
+		sticky={{start: conclusionStart, end: conclusionStart + 5.5}}
+		className="p-5"
+		>
+		<h1 className="display-1 text-center w-100">Conclusion</h1>
+		</ParallaxLayer>
 		
 		</Parallax>
 		</div>

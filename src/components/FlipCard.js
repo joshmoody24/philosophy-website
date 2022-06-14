@@ -49,7 +49,9 @@ export default function FlipCard({
 			position: "absolute",
 			backgroundColor: bgColor,
 			padding: "1rem",
-			transform: `rotate${direction}(${calcDegrees(flipped)}deg)`}}
+			transform: `rotate${direction}(${calcDegrees(flipped)}deg)`,
+			overflow:"auto",
+		}}
 	  >
 		{!backQuote && ( <>
 			<Card.Title>{backTitle}</Card.Title>
@@ -57,9 +59,9 @@ export default function FlipCard({
 			</>
 		)}
 		{backQuote && (
-			<blockquote class="blockquote" style={{fontSize: "1rem"}}>
-				<p>“{backBody}”</p>
-				<footer class="blockquote-footer text-center mt-1">{backTitle}</footer>
+			<blockquote className="blockquote" style={{fontSize: "1rem"}}>
+				<p>&ldquo;{backBody}”&rdquo;</p>
+				<footer className="blockquote-footer text-center mt-1">{backTitle}</footer>
 			</blockquote>
 		)}
 	  </Card>
@@ -73,7 +75,9 @@ export default function FlipCard({
 			position: "absolute",
 			backgroundColor: bgColor,
 			padding: "1rem",
-			transform: `rotate${direction}(${calcDegrees(!flipped)}deg)`}}
+			transform: `rotate${direction}(${calcDegrees(!flipped)}deg)`,
+			overflow: "auto"
+		}}
 	  >
 		{!frontQuote && ( <>
 			<Card.Title>{title}</Card.Title>
@@ -81,9 +85,9 @@ export default function FlipCard({
 			</>
 		)}
 		{frontQuote && (
-			<blockquote class="blockquote" style={{fontSize: "1rem"}}>
+			<blockquote className="blockquote" style={{fontSize: "1rem"}}>
 				<p>“{body}”</p>
-				<footer class="blockquote-footer text-center mt-1">{backTitle}</footer>
+				<footer className="blockquote-footer text-center mt-1">{backTitle}</footer>
 			</blockquote>
 		)}
 	  </Card>
