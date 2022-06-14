@@ -2,7 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+
 import moon from './img/moon.jpg';
+import socrates from './img/header.jpg'
+import lastSupper from './img/last-supper.jpg'
+import aristotle from './img/aristotle.jpg'
+import library from './img/library.jpg'
+import service from './img/service.jpg'
+import aurelius from './img/aurelius-bust.jpg'
+import gandhi from './img/gandhi.jpg'
+
 import { useRef } from 'react';
 
 import Button from 'react-bootstrap/Button';
@@ -17,7 +26,7 @@ function App() {
 	
 	const start = 0;
 	const introDuration = 7;
-	const learningDuration = 6;
+	const learningDuration = 5;
 	const masteryDuration = 7;
 	const helpingDuration = 5;
 	const conclusionDuration = 5;
@@ -42,21 +51,22 @@ function App() {
 		
 		<ParallaxLayer
 		offset={introStart}
-		speed={1}
-		factor={1}
+		factor={1.05}
 		style={{
-			backgroundImage: `url(${moon})`,
+			background: `rgba(0,0,0,0.5) url(${socrates})`,
 			backgroundSize: 'cover',
+			backgroundPosition: "center",
+			backgroundBlendMode:"darken"
 		}}
 		>
 		</ParallaxLayer>
 		
 		<ParallaxLayer
 		offset={introStart}
-		speed={0.1}
-		className="flex-center flex-column"
+		speed={0.5}
+		className="flex-center flex-column blend-text"
 		>
-		<h1 style={{color:"white"}} className="display-1">Philosophy of Life</h1>
+		<h1 className="display-1">Philosophy of Life (working title)</h1>
 		</ParallaxLayer>
 		
 		<ParallaxLayer
@@ -68,56 +78,124 @@ function App() {
 			ref.current.scrollTo(3)
 		}}
 		>
-		<h2 style={{color:"white"}}>By Josh Moody</h2>
+		<h2 className="blend-text">By Josh Moody</h2>
 		</ParallaxLayer>
 
 		<ParallaxLayer
-		sticky={{start: introStart + 3, end: introStart + 5.5}}
+		offset={introStart + 1}
+		factor={1.05}
+		speed={0.05}
+		style={{
+			background: `rgba(0,0,0,0.6) url(${lastSupper})`,
+			backgroundSize: 'cover',
+			backgroundPosition: "center",
+			backgroundBlendMode:"darken"
+		}}
+		>
+		</ParallaxLayer>
+
+		<ParallaxLayer
+		offset={introStart + 1}
+		speed={.2}
+		className="flex-center flex-column p-5 blend-text"
+		>
+			<h1 className="mb-3">Religious Disclaimer</h1>
+			<p style={{maxWidth:"70ch"}}>
+				I don't talk about Christianity or religion very much in this project. This is intentional.
+			</p>
+			<p style={{maxWidth:"70ch"}}>
+				My beliefs are centered in Christianity,
+				but I want to articulate them using the language of philosophy
+				instead of the language of the gospel of Jesus Christ.
+			</p>
+			<p style={{maxWidth:"70ch"}}>
+				Otherwise, I fear I would take the easy way out
+				and rely too heavily on my prior religious knowledge
+				instead of what I learned in this class.
+			</p>
+		</ParallaxLayer>
+
+		<ParallaxLayer
+		sticky={{start: introStart + 2.3, end: introStart + 5.5}}
 		className="p-5"
 		>
 		<OverlayTrigger placement="bottom" overlay={
-			<Tooltip>The inner sense of being at perfect harmony with the universe. Could be described as a "fulness of joy."</Tooltip>
+			<Tooltip>The inner sense of being at perfect harmony with the universe. Could also be described as a "fulness of joy."</Tooltip>
 		}>
 		<h1 className="display-1 text-center w-100">The Good: Inner Peace</h1>
 		</OverlayTrigger>
 		</ParallaxLayer>
 		
 		<ParallaxLayer
-		sticky={{start: introStart + 3.5, end: introStart + 6}}
+		sticky={{start: introStart + 3.5, end: introStart + 5.5}}
 		className="flex-center"
-		style={{ width: "33%" }}
+		style={{ width: "33%"}}
 		>
-		<Card style={{borderRadius:0,width:"100%",height:"100%",backgroundColor:"black",color:"white", display:"flex",alignItems:"center",justifyContent:"center"}}>
+		<Card style={{
+			borderRadius:0,
+			width:"100%",
+			height:"100%",
+			background: `rgba(0,0,0,0.5) url(${library})`,
+			backgroundPosition:"center",
+			backgroundBlendMode: "darken",
+			backgroundSize:"cover",
+			color:"white",
+			display:"flex",
+			alignItems:"center",
+			justifyContent:"center"}}
+		>
 		<Card.Title>1</Card.Title>
-		Learn as much as possible
-		<br />
-		<i className="bi bi-book"></i>
+		<strong style={{fontSize:"20px", textAlign:"center"}}>Learn as much as possible</strong>
+		<i className="bi bi-book mt-1"></i>
 		</Card>
 		</ParallaxLayer>
 		
 		<ParallaxLayer
-		sticky={{start: introStart + 4, end: introStart + 6.5}}
+		sticky={{start: introStart + 4, end: introStart + 6}}
 		className="flex-center"
 		style={{ width: "34%", marginLeft: "33%" }}
 		>
-		<Card style={{borderRadius:0,width:"100%",height:"100%",backgroundColor:"black",color:"white", display:"flex",alignItems:"center",justifyContent:"center"}}>
+		<Card style={{
+			borderRadius:0,
+			width:"100%",
+			height:"100%",
+			background: `rgba(0,0,0,0.5) url(${aristotle})`,
+			backgroundPosition:"center",
+			backgroundBlendMode: "darken",
+			backgroundSize:"cover",
+			color:"white",
+			display:"flex",
+			alignItems:"center",
+			justifyContent:"center",
+		}}
+		>
 		<Card.Title>2</Card.Title>
-		Develop self-mastery
-		<br />
-		<i className="bi bi-person-check"></i>
+		<strong style={{fontSize:"20px", textAlign:"center"}}>Develop self-mastery</strong>
+		<i className="bi bi-person-check mt-1"></i>
 		</Card>
 		</ParallaxLayer>
 		
 		<ParallaxLayer
-		sticky={{start: introStart + 4.5, end: introStart + 7}}
+		sticky={{start: introStart + 4.5, end: introStart + 6.5}}
 		className="flex-center"
 		style={{ width: "33%", marginLeft: "67%" }}
 		>
-		<Card style={{borderRadius:0,width:"100%",height:"100%",backgroundColor:"black",color:"white", display:"flex",alignItems:"center",justifyContent:"center"}}>
+		<Card style={{
+			borderRadius:0,
+			width:"100%",
+			height:"100%",
+			background: `rgba(0,0,0,0.5) url(${service})`,
+			backgroundPosition:"bottom 50% right 25%",
+			backgroundBlendMode: "darken",
+			backgroundSize:"cover",
+			color:"white",
+			display:"flex",
+			alignItems:"center",
+			justifyContent:"center"}}
+			>
 		<Card.Title>3</Card.Title>
-		Help other people do these things
-		<br />
-		<i className="bi bi-arrow-left"></i>
+		<strong style={{fontSize:"20px", textAlign:"center"}}>Help others learn and master themselves</strong>
+		<i className="bi bi-people mt-1"></i>
 		</Card>
 		</ParallaxLayer>
 
@@ -125,6 +203,7 @@ function App() {
 
 		<ParallaxLayer
 		sticky={{start: learningStart, end: learningStart + 1.95}}
+		style={{zIndex: 2}}
 		className="p-5"
 		>
 		<h1 className="display-1 text-center w-100">1. Learn as much as possible</h1>
@@ -132,6 +211,7 @@ function App() {
 		
 		<ParallaxLayer
 		sticky={{start: learningStart + 0.5, end: learningStart + 1.5}}
+		style={{zIndex:5}}
 		className="flex-center text-light"
 		>
 		<FlipCard
@@ -141,6 +221,7 @@ function App() {
 			close relationships, and suffering.</p>}
 			title="What is learning?"
 			backQuote={true}
+			bgColor="teal"
 			backTitle="Simone Weil"
 			backBody="[Academic students] are no nearer to goodness than their brothers working in fields and factories.
 			Peasants and workmen possess a nearness to God of incomparable savor which is found in the depths of poverty,
@@ -151,45 +232,55 @@ function App() {
 			body="Marcus Aurelius claims that learning
 			always leads to a more satisfying, pleasing outlook on the universe."
 			backQuote={true}
+			bgColor="royalblue"
 			backBody="[I]f a man should have a feeling and deeper insight with respect to the things which are provided in the universe,
 			there is hardly one of those which follow by way of consquenece which will not seem to him to be in a manner
 			disposed as to give pleasure&hellip;even the real gaping jaws of wild beasts."
 			backTitle="Marcus Aurelius"
 		/> 
 		
-		<FlipCard body="Application of quote" title="Explanation" backTitle="Philosopher" backBody="Quote" /> 
+		<FlipCard
+			body="Application of quote"
+			title="Learning requires humility"
+			backQuote={true}
+			backTitle="Lao-tzu"
+			bgColor="darkslateblue"
+			backBody="To know and yet (think) we do not know is the highest (attaiment); not to know (and yet think) we do know is a disease"
+		/> 
 		
 		</ParallaxLayer>
 
 		<ParallaxLayer
 		sticky={{start: learningStart + 2.3, end: learningStart + 3.3}}
 		className="p-5"
+		style={{zIndex:2}}
 		>
 		<h1 className="display-1 text-center w-100">The importance of faith and humility</h1>
 		</ParallaxLayer>
 
 		<ParallaxLayer
-			offset={learningStart + 2.2}
+			offset={learningStart + 2.275}
 			speed={.05}
 			factor={2}
-			style={{backgroundColor:"red"}}
+			style={{backgroundColor:"coral"}}
 			className="flex-center"
 		>
 			New content
 		</ParallaxLayer>
 
 		<ParallaxLayer
-		sticky={{start: learningStart + 3.95, end: learningStart + 4.5}}
+		sticky={{start: learningStart + 4, end: learningStart + 4.5}}
 		className="p-5"
+		style={{zIndex:2}}
 		>
 		<h1 className="display-1 text-center w-100">Personal Application</h1>
 		</ParallaxLayer>
 
 		<ParallaxLayer
 			offset={learningStart + 4}
-			speed={.05}
+			speed={.08}
 			factor={2}
-			style={{backgroundColor:"blue"}}
+			style={{backgroundColor:"khaki",}}
 			className="flex-center p-5 flex-column"
 		>
 			I exercise but refuse to do competitive sports.
@@ -203,8 +294,9 @@ function App() {
 		{/* SELF-MASTERY SECTION */}
 
 		<ParallaxLayer
-		sticky={{start: masteryStart, end: masteryStart + 0.75}}
+		sticky={{start: masteryStart, end: masteryStart + 0.23}}
 		className="p-5"
+		style={{zIndex:1, width:"70%"}}
 		>
 		<h1 className="display-1 text-center w-100">2. Develop self-mastery</h1>
 		</ParallaxLayer>
@@ -212,23 +304,32 @@ function App() {
 		
 		<ParallaxLayer
 			offset={masteryStart}
-			sticky={{start:masteryStart, end:masteryStart+3,}}
-			style={{backgroundColor:"transparent", width:"30%", left:"70%!important", marginLeft:"70%!important", float:"right"}}
+			sticky={{start:masteryStart-0.2, end:masteryStart+3.2}}
+			style={{
+				backgroundColor:"transparent",
+				width:"30%",
+				left:"70%!important",
+				marginLeft:"70%!important",
+				float:"right",
+				backgroundImage:`url(${aurelius})`,
+				backgroundPosition:"center",
+				backgroundSize:"cover",
+				zIndex:-1
+			}}
 			className="flex-center p-5"
 		>
-			Aurelius Picture
 		</ParallaxLayer>
 
 		<ParallaxLayer
 			offset={masteryStart}
 			speed={0.1}
 			factor={1.11}
-			style={{backgroundColor:"violet", width: "70%"}}
+			style={{backgroundColor:"cornflowerblue", width: "70%", zIndex:5}}
 			className="flex-center p-5"
 		>
-			<blockquote className="blockquote" style={{fontSize:"1.5rem"}}>
+			<blockquote className="blockquote" style={{fontSize:"1.5rem",zIndex:6}}>
 				<p>&ldquo;No longer talk at all about the kind of man that a good man ought to be, but be such.&rdquo;</p>
-				<footer className="blockquote-footer">Marcus Aurelius</footer>
+				<footer className="blockquote-footer text-dark" style={{opacity:"80%"}}>Marcus Aurelius</footer>
 			</blockquote>
 
 		</ParallaxLayer>
@@ -237,7 +338,7 @@ function App() {
 			offset={masteryStart + 1}
 			speed={0.1}
 			factor={1.11}
-			style={{backgroundColor:"purple", width: "70%"}}
+			style={{backgroundColor:"mediumaquamarine", width: "70%"}}
 			className="flex-center flex-column p-5"
 		>
 			<h2>Apply What You Learn</h2>
@@ -253,8 +354,8 @@ function App() {
 		<ParallaxLayer
 			offset={masteryStart + 2}
 			speed={0.1}
-			factor={1.2}
-			style={{backgroundColor:"indigo", width: "70%"}}
+			factor={1.25}
+			style={{backgroundColor:"mediumslateblue", width: "70%"}}
 			className="flex-center flex-column p-5"
 		>
 			<h2>Irrelevance of Pain and Pleasure</h2>
@@ -275,12 +376,12 @@ function App() {
 
 		<ParallaxLayer
 			offset={masteryStart + 3}
-			speed={0.15}
+			speed={0.125}
 			factor={1.2}
-			style={{backgroundColor:"olive", width: "70%"}}
+			style={{backgroundColor:"blueviolet", width: "70%"}}
 			className="flex-center flex-column p-5"
 		>
-			<h2>Avoid Complaining or Passing Judgement</h2>
+			<h2>Avoid Complaint and Judgement</h2>
 			<p style={{maxWidth:"70ch"}}>
 			Complaining is another natural human tendency. Aurelius encourages us to avoid complaining and accept those things which are out of our control.
 			"Take away the complaint, "I have been harmed," and the harm is taken away."
@@ -304,20 +405,25 @@ function App() {
 
 		<ParallaxLayer
 			sticky={{start:masteryStart+4, end:masteryStart+4.5,}}
-			style={{backgroundColor:"transparent", width:"30%"}}
+			style={{
+				backgroundColor:"transparent",
+				width:"30%",
+				backgroundImage:`url(${gandhi})`,
+				backgroundSize:"cover",
+				backgroundPosition:"center",
+			}}
 			className="flex-center p-5"
 		>
-			Gandhi Picture
 		</ParallaxLayer>
 
 		<ParallaxLayer
 			offset={masteryStart + 4}
-			speed={0.2}
-			factor={1.25}
-			style={{backgroundColor:"firebrick", width:"70%", left:"70%!important", marginLeft:"70%!important", float:"right"}}
+			speed={0.1}
+			factor={1.35}
+			style={{backgroundColor:"tan", width:"70%", left:"70%!important", marginLeft:"70%!important", float:"right", zIndex:5}}
 			className="flex-center flex-column p-5"
 		>
-			<h2>Avoid Complaining or Passing Judgement</h2>
+			<h2>A Second Witness</h2>
 			<p style={{maxWidth:"70ch"}}>
 			Gandhi is another individual who discussed the principle of self-mastery extensively. His concept of "self-purification" is quite similar to what
 we have discussed so far, but with a subtle difference.
@@ -354,7 +460,7 @@ we have discussed so far, but with a subtle difference.
 
 		<ParallaxLayer
 			offset={masteryStart}
-			sticky={{start:masteryStart+5, end:masteryStart+6,}}
+			sticky={{start:masteryStart+5.5, end:masteryStart+6,}}
 			style={{backgroundColor:"transparent"}}
 			className="flex-center p-5 flex-column"
 		>
@@ -415,7 +521,7 @@ we have discussed so far, but with a subtle difference.
 
 		<ParallaxLayer
 		offset={helpingStart + 1.45}
-		speed={1}
+		speed={.75}
 		factor={1}
 		style={{backgroundColor:"transparent", marginLeft:"20%"}}
 		>
@@ -436,7 +542,7 @@ we have discussed so far, but with a subtle difference.
 		</ParallaxLayer>
 
 		<ParallaxLayer
-		offset={helpingStart + 1.95}
+		offset={helpingStart + 1.98}
 		speed={0.61}
 		factor={1}
 		style={{backgroundColor:"transparent", marginLeft: "67%"}}
@@ -456,8 +562,8 @@ we have discussed so far, but with a subtle difference.
 		</ParallaxLayer>
 
 		<ParallaxLayer
-		offset={helpingStart + 2.5}
-		speed={.05}
+		offset={helpingStart + 2.35}
+		speed={.1}
 		factor={1}
 		style={{backgroundColor:"transparent", marginLeft: "19%"}}
 		>
@@ -481,8 +587,9 @@ we have discussed so far, but with a subtle difference.
 		<ParallaxLayer
 		offset={end-1}
 		className="flex-center"
+		style={{backgroundColor:"tomato"}}
 		>
-			<h2>Thank you!</h2>
+			<h2 style={{fontSize:"64px", color:"white"}}>Thank you!</h2>
 		</ParallaxLayer>
 
 		

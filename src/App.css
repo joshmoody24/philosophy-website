@@ -57,3 +57,11 @@ h1, h2, h3 {
   justify-content: center;
   align-items: center;
 }
+
+.blend-text {
+  color: #fffc;
+}
+
+.blockquote-footer {
+  color: #fff9!important;
+}
