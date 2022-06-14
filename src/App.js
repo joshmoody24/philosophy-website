@@ -132,9 +132,11 @@ function App() {
 		</ParallaxLayer>
 
 		<ParallaxLayer
-		offset={2.25}
+		offset={2.43}
 		speed={0.1}
-		className="p-5 flex-center flex-column"
+		factor={0.5}
+		style={{zIndex:1, maxWidth:"50em"}}
+		className="p-5 flex-center flex-column mx-auto"
 		>
 		<OverlayTrigger placement="bottom" overlay={
 			<Tooltip>The inner sense of being at perfect harmony with the universe. Could also be described as a "fulness of joy."</Tooltip>
@@ -144,7 +146,7 @@ function App() {
 		</ParallaxLayer>
 
 		<ParallaxLayer
-		offset={2.65}
+		offset={2.5}
 		speed={0.18}
 		className="p-5 flex-center flex-column"
 		>
@@ -345,7 +347,7 @@ function App() {
 
 		<ParallaxLayer
 			offset={masteryStart}
-			speed={0.1}
+			speed={0.102}
 			factor={1.11}
 			style={{backgroundColor:"cornflowerblue", width: "70%", zIndex:5}}
 			className="flex-center p-5"
