@@ -10,8 +10,8 @@ export default function FlipCard({
 	direction="Y",
 	bgColor="black",
 	zIndex = 0,
-	height = 300,
-	width = 300,
+	height = 400,
+	width = 400,
 	frontQuote = false,
 	backQuote = false,
 }
@@ -36,7 +36,7 @@ export default function FlipCard({
 	}
 
 	return (
-	<div style={{position:"relative", width: width, height: height, display: "flex", margin: "2rem"}}
+	<div style={{position:"relative", width: width, height: height, display: "flex", margin: "2rem", color:"white"}}
 		onMouseEnter={() => showFront()}
 		onMouseLeave={() => showBack()}
 	>
@@ -48,9 +48,9 @@ export default function FlipCard({
 			backfaceVisibility: "hidden",
 			position: "absolute",
 			backgroundColor: bgColor,
-			padding: "1rem",
+			padding: "2rem",
 			transform: `rotate${direction}(${calcDegrees(flipped)}deg)`,
-			overflow:"auto",
+			overflow:"hidden",
 		}}
 	  >
 		{!backQuote && ( <>
@@ -60,7 +60,7 @@ export default function FlipCard({
 		)}
 		{backQuote && (
 			<blockquote className="blockquote" style={{fontSize: "1rem"}}>
-				<p>&ldquo;{backBody}”&rdquo;</p>
+				<p>&ldquo;{backBody}&rdquo;</p>
 				<footer className="blockquote-footer text-center mt-1">{backTitle}</footer>
 			</blockquote>
 		)}
@@ -74,9 +74,9 @@ export default function FlipCard({
 			backfaceVisibility: "hidden",
 			position: "absolute",
 			backgroundColor: bgColor,
-			padding: "1rem",
+			padding: "2rem",
 			transform: `rotate${direction}(${calcDegrees(!flipped)}deg)`,
-			overflow: "auto"
+			overflow: "hidden"
 		}}
 	  >
 		{!frontQuote && ( <>
@@ -86,8 +86,8 @@ export default function FlipCard({
 		)}
 		{frontQuote && (
 			<blockquote className="blockquote" style={{fontSize: "1rem"}}>
-				<p>“{body}”</p>
-				<footer className="blockquote-footer text-center mt-1">{backTitle}</footer>
+				<p>&ldquo;{body}&rdquo;</p>
+				<footer className="blockquote-footer text-center mt-1">{title}</footer>
 			</blockquote>
 		)}
 	  </Card>

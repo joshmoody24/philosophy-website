@@ -1,3 +1,18 @@
+/* font-family: 'Abril Fatface', cursive;
+font-family: 'Nanum Myeongjo', serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/
+
+html, body{
+  font-size: 18px;
+}
+
+h1, h2, h3 {
+  font-family: "Oswald", sans-serif;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
