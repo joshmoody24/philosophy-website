@@ -11,6 +11,7 @@ import library from './img/library.jpg'
 import service from './img/service.jpg'
 import aurelius from './img/aurelius-bust.jpg'
 import gandhi from './img/gandhi.jpg'
+import universe from './img/universe-4.jpg'
 
 import { useRef } from 'react';
 
@@ -53,7 +54,7 @@ function App() {
 		offset={introStart}
 		factor={1.05}
 		style={{
-			background: `rgba(0,0,0,0.5) url(${socrates})`,
+			background: `rgba(0,0,0,0.325) url(${socrates})`,
 			backgroundSize: 'cover',
 			backgroundPosition: "center",
 			backgroundBlendMode:"darken"
@@ -86,7 +87,7 @@ function App() {
 		factor={1.05}
 		speed={0.05}
 		style={{
-			background: `rgba(0,0,0,0.6) url(${lastSupper})`,
+			background: `rgba(0,0,0,0.35) url(${lastSupper})`,
 			backgroundSize: 'cover',
 			backgroundPosition: "center",
 			backgroundBlendMode:"darken"
@@ -116,14 +117,42 @@ function App() {
 		</ParallaxLayer>
 
 		<ParallaxLayer
-		sticky={{start: introStart + 2.3, end: introStart + 5.5}}
-		className="p-5"
+		offset={introStart + 2}
+		factor={2.75}
+		speed={0.01}
+		className="bg-cover"
+		style={{
+			backgroundColor: `rgba(0,0,0,0.35)`,
+			backgroundImage: `url(${universe})`,
+			backgroundPosition:"center",
+			backgroundBlendMode:"multiply",
+			zIndex:-1,
+		}}
+		>
+		</ParallaxLayer>
+
+		<ParallaxLayer
+		offset={2.25}
+		speed={0.1}
+		className="p-5 flex-center flex-column"
 		>
 		<OverlayTrigger placement="bottom" overlay={
 			<Tooltip>The inner sense of being at perfect harmony with the universe. Could also be described as a "fulness of joy."</Tooltip>
 		}>
-		<h1 className="display-1 text-center w-100">The Good: Inner Peace</h1>
+			<h1 className="display-1 text-center w-100 text-light">The Good: Inner Peace</h1>
 		</OverlayTrigger>
+		</ParallaxLayer>
+
+		<ParallaxLayer
+		offset={2.65}
+		speed={0.18}
+		className="p-5 flex-center flex-column"
+		>
+		<>
+			<h2 className="display-5 text-center w-100 blend-text mt-5" style={{maxWidth:"40ch"}}>
+			The inner sense of being at perfect harmony with the universe. Could also be described as a "fulness of joy."
+			</h2>
+		</>
 		</ParallaxLayer>
 		
 		<ParallaxLayer
@@ -135,7 +164,7 @@ function App() {
 			borderRadius:0,
 			width:"100%",
 			height:"100%",
-			background: `rgba(0,0,0,0.5) url(${library})`,
+			background: `rgba(0,0,0,0.3) url(${library})`,
 			backgroundPosition:"center",
 			backgroundBlendMode: "darken",
 			backgroundSize:"cover",
@@ -144,9 +173,7 @@ function App() {
 			alignItems:"center",
 			justifyContent:"center"}}
 		>
-		<Card.Title>1</Card.Title>
-		<strong style={{fontSize:"20px", textAlign:"center"}}>Learn as much as possible</strong>
-		<i className="bi bi-book mt-1"></i>
+		<strong className="display-6 text-center m-5">Learn as much as possible</strong>
 		</Card>
 		</ParallaxLayer>
 		
@@ -159,7 +186,7 @@ function App() {
 			borderRadius:0,
 			width:"100%",
 			height:"100%",
-			background: `rgba(0,0,0,0.5) url(${aristotle})`,
+			background: `rgba(0,0,0,0.3) url(${aristotle})`,
 			backgroundPosition:"center",
 			backgroundBlendMode: "darken",
 			backgroundSize:"cover",
@@ -169,9 +196,7 @@ function App() {
 			justifyContent:"center",
 		}}
 		>
-		<Card.Title>2</Card.Title>
-		<strong style={{fontSize:"20px", textAlign:"center"}}>Develop self-mastery</strong>
-		<i className="bi bi-person-check mt-1"></i>
+		<strong className="display-6 text-center m-5">Develop self-mastery</strong>
 		</Card>
 		</ParallaxLayer>
 		
@@ -184,7 +209,7 @@ function App() {
 			borderRadius:0,
 			width:"100%",
 			height:"100%",
-			background: `rgba(0,0,0,0.5) url(${service})`,
+			background: `rgba(0,0,0,0.3) url(${service})`,
 			backgroundPosition:"bottom 50% right 25%",
 			backgroundBlendMode: "darken",
 			backgroundSize:"cover",
@@ -192,10 +217,8 @@ function App() {
 			display:"flex",
 			alignItems:"center",
 			justifyContent:"center"}}
-			>
-		<Card.Title>3</Card.Title>
-		<strong style={{fontSize:"20px", textAlign:"center"}}>Help others learn and master themselves</strong>
-		<i className="bi bi-people mt-1"></i>
+		>
+		<strong className="display-6 text-center m-5">Help others learn and master themselves</strong>
 		</Card>
 		</ParallaxLayer>
 
@@ -262,7 +285,7 @@ function App() {
 			offset={learningStart + 2.275}
 			speed={.05}
 			factor={2}
-			style={{backgroundColor:"coral"}}
+			style={{backgroundColor:"khaki"}}
 			className="flex-center"
 		>
 			New content
@@ -280,7 +303,7 @@ function App() {
 			offset={learningStart + 4}
 			speed={.08}
 			factor={2}
-			style={{backgroundColor:"khaki",}}
+			style={{backgroundColor:"coral",}}
 			className="flex-center p-5 flex-column"
 		>
 			I exercise but refuse to do competitive sports.
@@ -329,7 +352,7 @@ function App() {
 		>
 			<blockquote className="blockquote" style={{fontSize:"1.5rem",zIndex:6}}>
 				<p>&ldquo;No longer talk at all about the kind of man that a good man ought to be, but be such.&rdquo;</p>
-				<footer className="blockquote-footer text-dark" style={{opacity:"80%"}}>Marcus Aurelius</footer>
+				<footer className="blockquote-footer text-dark fade-light">Marcus Aurelius</footer>
 			</blockquote>
 
 		</ParallaxLayer>
@@ -358,19 +381,21 @@ function App() {
 			style={{backgroundColor:"mediumslateblue", width: "70%"}}
 			className="flex-center flex-column p-5"
 		>
-			<h2>Irrelevance of Pain and Pleasure</h2>
+			<h2>Disregard Pain and Pleasure</h2>
 			<p style={{maxWidth:"70ch"}}>
-				For example, humans are predisposed to seek pleasure while avoiding pain. However, Aurelius makes the case that pleasure and pain have no intrinsic
-				value: "[P]ain and pleasure... eqully happen to good men and bad, bein things which make us neither better nor worse.
+				Humans are predisposed to seek pleasure while avoiding pain. However, Aurelius makes the case that pleasure and pain have no intrinsic
+				value: "[P]ain and pleasure... eqully happen to good men and bad, being things which make us neither better nor worse.
 				Therefore they are neither good nor evil."
 			</p>
 
 			<p style={{maxWidth:"70ch"}}>
-				I agree with Aurelius' overall sentiment. However, I would argue that both pleasure and pain actually CAN "make us better [or] worse" if we
-				allow them to do so. Pain can be a powerful teaching tool in certain situations. Pain can teach us to avoid harmful behaviors.
-				It can increase our empathy for others. Avoiding pain increases our chances of living longer.
+				I agree with Aurelius' overall sentiment with one caveat.
+				I would argue that pain actually can "make us better" if we
+				allow it to do so. Pain can be a powerful teaching tool that helps us avoid harmful behaviors.
+				It can also increase our empathy for others. Avoiding pain increases our chances of living longer.
 				Living longer enables us to learn more things and help more people.
 			</p>
+			
 		</ParallaxLayer>
 
 
@@ -378,7 +403,7 @@ function App() {
 			offset={masteryStart + 3}
 			speed={0.125}
 			factor={1.2}
-			style={{backgroundColor:"blueviolet", width: "70%"}}
+			style={{backgroundColor:"#9e3df6", width: "70%"}}
 			className="flex-center flex-column p-5"
 		>
 			<h2>Avoid Complaint and Judgement</h2>
@@ -439,7 +464,7 @@ we have discussed so far, but with a subtle difference.
 					To attain to perfect purity one has to become absolutely
 					<br />
 					passion-free in thought, speech, and action.&rdquo;</p>
-				<footer className="blockquote-footer">Mahatma Gandhi</footer>
+				<footer className="blockquote-footer fade-light text-dark">Mahatma Gandhi</footer>
 			</blockquote>
 
 			<p style={{maxWidth:"70ch", width:"100%"}}>
@@ -454,7 +479,7 @@ we have discussed so far, but with a subtle difference.
 			<blockquote className="blockquote">
 				<p>
 					&ldquo;[S]ee that ye bridle all your passions, that ye may be filled with love&rdquo;</p>
-				<footer className="blockquote-footer">Alma 38:12</footer>
+				<footer className="blockquote-footer fade-light text-dark">Alma 38:12</footer>
 			</blockquote>
 		</ParallaxLayer>
 

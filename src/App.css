@@ -59,9 +59,17 @@ h1, h2, h3 {
 }
 
 .blend-text {
-  color: #fffc;
+  color: #fffd;
 }
 
 .blockquote-footer {
   color: #fff9!important;
+}
+
+.bg-cover{
+  background-size: cover!important;
+}
+
+.fade-light{
+  opacity: 80%;
 }
