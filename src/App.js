@@ -12,7 +12,8 @@ import service from './img/service.jpg'
 import aurelius from './img/aurelius-bust.jpg'
 import gandhi from './img/gandhi.jpg'
 import universe from './img/universe-4.jpg'
-import cave from './img/cave.jpg'
+import moses from './img/moses.jpg'
+import chocolate from './img/chocolate.jpg'
 
 import { useRef } from 'react';
 
@@ -30,8 +31,8 @@ function App() {
 	const introDuration = 7;
 	const learningDuration = 3.65;
 	const masteryDuration = 7;
-	const helpingDuration = 4;
-	const conclusionDuration = 3.5;
+	const helpingDuration = 3.5;
+	const conclusionDuration = 2.75;
 
 	const buffer = 1;
 
@@ -140,7 +141,7 @@ function App() {
 		className="p-5 flex-center flex-column mx-auto"
 		>
 		<OverlayTrigger placement="bottom" overlay={
-			<Tooltip>The inner sense of being at perfect harmony with the universe. It is equivalent to a "fulness of joy."</Tooltip>
+			<Tooltip>An inner sense of being at perfect harmony with the universe. It is equivalent to a "fulness of joy."</Tooltip>
 		}>
 			<h1 className="display-1 text-center w-100 text-light">The Good: Inner Peace</h1>
 		</OverlayTrigger>
@@ -152,9 +153,21 @@ function App() {
 		className="p-5 flex-center flex-column"
 		>
 		<>
-			<h2 className="display-5 text-center w-100 blend-text mt-5" style={{maxWidth:"ch"}}>
-			The inner sense of being at perfect harmony with the universe. It is equivalent to a "fulness of joy."
+			<h2 className="display-5 text-center w-100 blend-text mt-5" style={{maxWidth:"32ch"}}>
+			An inner sense of being at perfect harmony with the universe. It is equivalent to a "fulness of joy."
 			</h2>
+		</>
+		</ParallaxLayer>
+
+		<ParallaxLayer
+		offset={2.92}
+		speed={0.13}
+		className="p-5 flex-center flex-column"
+		>
+		<>
+			<h3 className="display-6 text-center w-100 blend-text mt-5" style={{maxWidth:"50ch"}}>
+				How is inner peace achieved?
+			</h3>
 		</>
 		</ParallaxLayer>
 		
@@ -565,10 +578,24 @@ we have discussed so far, but with a subtle difference.
 		</ParallaxLayer>
 
 		<ParallaxLayer
+			offset={masteryStart + 5.5}
+			speed={0.01}
+			factor={2}
+			style={{
+				backgroundImage:`url(${chocolate})`,
+				backgroundSize:"cover",
+				backgroundPosition:"center",
+				backgroundBlendMode:"darken",
+				backgroundColor:"rgba(0,0,0,.5)"
+			}}
+		>
+		</ParallaxLayer>
+
+		<ParallaxLayer
 			offset={masteryStart+6}
 			style={{backgroundColor:"transparent"}}
 			speed={0.05}
-			className="flex-center p-5 flex-column"
+			className="flex-center p-5 flex-column blend-text"
 		>
 			<h2>Personal Example</h2>
 			<p className="good-width">
@@ -603,7 +630,7 @@ we have discussed so far, but with a subtle difference.
 
 		{/* HELPING OTHERS SECTION */}
 		<ParallaxLayer
-		sticky={{start: helpingStart, end: helpingStart + 4}}
+		sticky={{start: helpingStart -0.5, end: helpingStart + helpingDuration}}
 		className="p-5 mx-auto flex-center"
 		style={{maxWidth:"52em", zIndex:-100}}
 		>
@@ -623,7 +650,7 @@ we have discussed so far, but with a subtle difference.
 				body="If it is in one's power to help others, it is morally necessary to do so. This help
 				should be given in a spirit of nonjudgmental love."
 				title="Judge not"
-				blur={"5px"}
+				blur={"6px"}
 				bgColor="#a337"
 			>
 			</FlipCard>
@@ -644,7 +671,7 @@ we have discussed so far, but with a subtle difference.
 				backBody="To serve our brother, to please him, to allow him his due and to let him live, is the way of self-denial, the way of the cross.
 				Greater love hath no man that this, that a man lay down his life for his friends."
 				bgColor="#a917"
-				blur="5px"
+				blur="6px"
 			>
 			</FlipCard>
 		</ParallaxLayer>
@@ -668,7 +695,7 @@ we have discussed so far, but with a subtle difference.
 				height={430}
 				width={430}
 				bgColor="#33a7"
-				blur="5px"
+				blur="6px"
 			>
 			</FlipCard>
 		</ParallaxLayer>
@@ -688,7 +715,7 @@ we have discussed so far, but with a subtle difference.
 				backTitle="William James"
 				backBody="We ought... delicately and profoundly to respect one another's mental freedom:
 				then only shall we bring about the intellectual republic."
-				blur="5px"
+				blur="6px"
 				bgColor="#2a37"
 
 			>
@@ -724,7 +751,7 @@ we have discussed so far, but with a subtle difference.
 				family and closest friends. I decided to prioritize the people who were in my life at that very moment.
 				This change in mindset allowed me to serve others much more effectively. It also improved my mental well-being considerably."
 				bgColor="#7177"
-				blur="8px"
+				blur="7px"
 			>
 			</FlipCard>
 		</ParallaxLayer>
@@ -733,8 +760,23 @@ we have discussed so far, but with a subtle difference.
 		{/* CONCLUSION SECTION */}
 
 		<ParallaxLayer
-		sticky={{start: conclusionStart, end: conclusionStart + 1.5}}
-		className="p-5 d-flex flex-column"
+			offset={conclusionStart}
+			speed={0.01}
+			factor={1.8}
+			style={{
+				backgroundImage:`url(${moses})`,
+				backgroundSize:"cover",
+				backgroundPosition:"50% 45%",
+				backgroundBlendMode:"darken",
+				backgroundColor:"rgba(0,0,0,.5)"
+			}}
+		>
+
+		</ParallaxLayer>
+
+		<ParallaxLayer
+		sticky={{start: conclusionStart + 0.1, end: conclusionStart + .8}}
+		className="p-5 d-flex flex-column text-light"
 		>
 		<h1 className="display-1 text-center w-100">A scriptural conclusion</h1>
 		<div className="flex-center my-auto flex-column">
