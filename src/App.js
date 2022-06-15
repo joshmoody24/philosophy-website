@@ -73,7 +73,7 @@ function App() {
 		</ParallaxLayer>
 		
 		<ParallaxLayer
-		offset={introStart + 0.946}
+		offset={introStart + 0.93}
 		speed={-5}
 		style={{display:"flex", justifyContent:"center"}}
 		onClick={() => {
@@ -243,7 +243,7 @@ function App() {
 		<ParallaxLayer
 		sticky={{start: learningStart, end: learningStart + 1.95}}
 		style={{zIndex: 2, pointerEvents:"none"}}
-		className="p-5"
+		className="p-4"
 		>
 		<h1 className="display-1 text-center w-100">1. Learn as much as possible</h1>
 		</ParallaxLayer>
@@ -291,8 +291,8 @@ function App() {
 		</ParallaxLayer>
 
 		<ParallaxLayer
-		offset={learningStart + 2.4}
-		speed={0.03}
+		offset={learningStart + 2.39}
+		speed={0.05}
 		className="p-5"
 		style={{zIndex:10, pointerEvents:"none"}}
 		>
@@ -300,13 +300,13 @@ function App() {
 		</ParallaxLayer>
 
 		<ParallaxLayer
-			offset={learningStart + 2.275}
-			speed={.08}
-			factor={1.25}
+			offset={learningStart + 2.32}
+			speed={.03}
+			factor={1.28}
 			style={{backgroundColor:"khaki", zIndex:5}}
 			className="flex-center flex-column"
 		>
-		<p style={{maxWidth:"70ch", width:"100%"}}>
+		<p className="mt-4" style={{maxWidth:"70ch", width:"100%"}}>
 			Learning as much as possible means attempting to learn <strong>all</strong> truth.
 		</p>
 		<p style={{maxWidth:"70ch", width:"100%"}}>
@@ -352,9 +352,9 @@ function App() {
 
 		<ParallaxLayer
 		offset={learningStart + 3.52}
-		speed={0.02}
+		speed={0.1}
 		className="p-5"
-		style={{zIndex:2}}
+		style={{zIndex:7}}
 		>
 		<h1 className="display-1 text-center w-100">Personal Example</h1>
 		</ParallaxLayer>
@@ -362,8 +362,8 @@ function App() {
 		<ParallaxLayer
 			offset={learningStart + 3.4}
 			speed={.08}
-			factor={1.2}
-			style={{backgroundColor:"coral",}}
+			factor={1.18}
+			style={{backgroundColor:"coral",zIndex:5}}
 			className="flex-center p-5 flex-column"
 		>
 			<p className="good-width">
@@ -390,9 +390,9 @@ function App() {
 		{/* SELF-MASTERY SECTION */}
 
 		<ParallaxLayer
-		sticky={{start: masteryStart, end: masteryStart + 0.23}}
+		offset={masteryStart}
 		className="p-5"
-		style={{zIndex:1, width:"70%"}}
+		style={{zIndex:10, width:"70%"}}
 		>
 		<h1 className="display-1 text-center w-100">2. Develop self-mastery</h1>
 		</ParallaxLayer>
@@ -775,7 +775,7 @@ we have discussed so far, but with a subtle difference.
 		</ParallaxLayer>
 
 		<ParallaxLayer
-		sticky={{start: conclusionStart + 0.1, end: conclusionStart + .8}}
+		sticky={{start: conclusionStart + 0.1, end: conclusionStart + .7}}
 		className="p-5 d-flex flex-column text-light"
 		>
 		<h1 className="display-1 text-center w-100">A scriptural conclusion</h1>
