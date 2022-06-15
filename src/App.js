@@ -27,10 +27,10 @@ function App() {
 	
 	const start = 0;
 	const introDuration = 7;
-	const learningDuration = 5;
+	const learningDuration = 3.65;
 	const masteryDuration = 7;
-	const helpingDuration = 5;
-	const conclusionDuration = 5;
+	const helpingDuration = 4;
+	const conclusionDuration = 3.5;
 
 	const buffer = 1;
 
@@ -228,7 +228,7 @@ function App() {
 
 		<ParallaxLayer
 		sticky={{start: learningStart, end: learningStart + 1.95}}
-		style={{zIndex: 2}}
+		style={{zIndex: 2, pointerEvents:"none"}}
 		className="p-5"
 		>
 		<h1 className="display-1 text-center w-100">1. Learn as much as possible</h1>
@@ -265,7 +265,8 @@ function App() {
 		/> 
 		
 		<FlipCard
-			body="Application of quote"
+			body="You can't learn if you assume others have nothing to teach you.
+			Learning requires being aware of your own fallibility."
 			title="Learning requires humility"
 			backQuote={true}
 			backTitle="Lao-tzu"
@@ -276,43 +277,99 @@ function App() {
 		</ParallaxLayer>
 
 		<ParallaxLayer
-		sticky={{start: learningStart + 2.3, end: learningStart + 3.3}}
+		offset={learningStart + 2.4}
+		speed={0.03}
 		className="p-5"
-		style={{zIndex:2}}
+		style={{zIndex:10, pointerEvents:"none"}}
 		>
-		<h1 className="display-1 text-center w-100">The importance of faith and humility</h1>
+		<h1 className="display-1 text-center w-100">The importance of faith</h1>
 		</ParallaxLayer>
 
 		<ParallaxLayer
 			offset={learningStart + 2.275}
-			speed={.05}
-			factor={2}
-			style={{backgroundColor:"khaki"}}
-			className="flex-center"
+			speed={.08}
+			factor={1.25}
+			style={{backgroundColor:"khaki", zIndex:5}}
+			className="flex-center flex-column"
 		>
-			New content
+		<p style={{maxWidth:"70ch", width:"100%"}}>
+			Learning as much as possible means attempting to learn <strong>all</strong> truth.
+		</p>
+		<p style={{maxWidth:"70ch", width:"100%"}}>
+			This requires faith. Why?
+		</p>
+		<ol style={{maxWidth:"70ch", width:"100%"}}>
+			<li>
+				It is impossible to know anything with 100% certainty (other than the fact that&nbsp;
+				<OverlayTrigger placement="right" overlay={
+					<Tooltip>The statement "I am, I exist" is necessarily true every time it is uttered by me or conceived in my mind."<br />(René Descartes)</Tooltip>
+				}>
+					<a className="link text-dark">one's own consciousness exists</a>
+				</OverlayTrigger>
+				).
+				Thus, to believe anything else requires some degree of
+				faith—acting as though something is true without
+				100% certainty.
+			</li>
+			<li>
+				Some truths are created by belief itself, for example,&nbsp;
+				<OverlayTrigger placement="right" overlay={
+					<Tooltip>"If I stand aloof, and refuse to budge an inch until I have objective evidence [that you like me]&hellip;ten to one your liking never comes"<br />(William James)</Tooltip>
+				}>
+					<a className="link text-dark">friendship.</a>
+				</OverlayTrigger>
+			</li>
+		</ol>		
+		<div class="blockquote">
+			<p>
+				&ldquo;[A] rule of thinking which would absolutely prevent me
+				<br />
+				from acknowledging certain kinds of truth <em>if those kinds
+				<br />
+				of truth were really there,</em> would be an irrational rule.&rdquo;
+			</p>
+			<footer class="blockquote-footer text-dark fade-light">William James</footer>
+		</div>
+
+		<p style={{maxWidth:"70ch", width:"100%"}}>
+			Because agnosticism is devoid of faith, it is incompatible with my philosophy.
+		</p>
 		</ParallaxLayer>
 
 		<ParallaxLayer
-		sticky={{start: learningStart + 4, end: learningStart + 4.5}}
+		offset={learningStart + 3.52}
+		speed={0.02}
 		className="p-5"
 		style={{zIndex:2}}
 		>
-		<h1 className="display-1 text-center w-100">Personal Application</h1>
+		<h1 className="display-1 text-center w-100">Personal Example</h1>
 		</ParallaxLayer>
 
 		<ParallaxLayer
-			offset={learningStart + 4}
+			offset={learningStart + 3.4}
 			speed={.08}
-			factor={2}
+			factor={1.2}
 			style={{backgroundColor:"coral",}}
 			className="flex-center p-5 flex-column"
 		>
-			I exercise but refuse to do competitive sports.
-			I am very pain-averse and naturally do NOT want to physically exert myself. But I do it anyway.
-			I don't particularly care about looking good or being strong,
-			I just like the feeling of using my mind to push my body farther than my body wants to go. But I avoid competition because
-			that doesn't serve any purpose.
+			<p class="good-width">
+				If I had to describe myself in 3 words, I would choose "I love learning."
+			</p>
+			<p class="good-width">
+			I consider it a moral responsibility to learn throughout life.
+			My decision to attend Brigham Young University had
+			nothing to do with getting a high-paying job.
+			It was entirely motivated by my desire to gain knowledge and develop new skills.
+			</p>
+			<p class="good-width">
+				For this reason, I am currently pursuing a master's degree,
+				and will possibly pursue a ph.D. I would keep attending school my entire life
+				if I could (although I doubt BYU would like that very much).
+			</p>
+			<p class="good-width">
+				Even if I don't end up pursuing academic education that far,
+				I will seek a career that requires constantly learning new concepts and skills. 
+			</p>
 		</ParallaxLayer>
 
 
@@ -367,11 +424,13 @@ function App() {
 			className="flex-center flex-column p-5"
 		>
 			<h2>Apply What You Learn</h2>
-			<p style={{maxWidth:"70ch"}}>
+			<p class="good-width">
 				Learning by itself is not sufficient to produce inner peace and harmony. Knowledge and skills must be used properly.
-				Another way of phrasing "self-mastery" might be "the proper application of knowledge."
+				Another way of phrasing "self-mastery" might be "the proper application of what you know."
+			</p>
+			<p class="good-width">
 				By nature of being imperfect beings, humans have to wrestle with desires and behaviors that contradict what we know to be true.
-				In order to properly apply knowledge, we must develop enough control over our passions that we can act in perfect accordance with our knowledge.
+				In order to properly apply knowledge, we must develop control over our passions so we can act in accordance with our knowledge.
 			</p>
 
 		</ParallaxLayer>
@@ -389,7 +448,10 @@ function App() {
 				value: "[P]ain and pleasure... eqully happen to good men and bad, being things which make us neither better nor worse.
 				Therefore they are neither good nor evil."
 			</p>
-
+			<p class="good-width">
+				In other words, the degree to which we experience pain and pleasure is almost entirely out of our control.
+				For this reason, pain and pleasure are irrelevant to our personal growth and should be treated with indifference.
+			</p>
 			<p style={{maxWidth:"70ch"}}>
 				I agree with Aurelius' overall sentiment with one caveat.
 				I would argue that pain actually can "make us better" if we
@@ -409,23 +471,39 @@ function App() {
 			className="flex-center flex-column p-5"
 		>
 			<h2>Avoid Complaint and Judgement</h2>
-			<p style={{maxWidth:"70ch"}}>
-			Complaining is another natural human tendency. Aurelius encourages us to avoid complaining and accept those things which are out of our control.
-			"Take away the complaint, "I have been harmed," and the harm is taken away."
+			<p class="good-width">
+			Complaining is another natural human tendency.
+			Aurelius encourages us to avoid complaining and accept those things which are out of our control:
+			"Take away the complaint, 'I have been harmed,' and the harm is taken away."
+			</p>
+
+			<p class="good-width">
+			Closely related to complaint is judgment, or the labeling of things as "good" or "bad."
+			Aurelius claims that judgement is the cause of suffering:
 			"If thou art pained by any external thing, it is not this thing that disturbs thee, but thy own judgement about it.
 			And it is in they power to wipe out this judgement now."
 			</p>
 
 			<p style={{maxWidth:"70ch"}}>
-			We cannot control most things that happen to us. Aurelius claims that complaining about them not only INCREASES the suffering but the complaint is actually the CAUSE
-			of the suffering! However, there are some things we can control, and we must do all that is in our power to make things right.
-			"If thou are pained because thou art not doing some particular thing which seems to thee to be right, why dost thou not rather act than complain?"
+			We cannot control most things that happen to us.
+			The philosophy of stoicism encourages us to simply accept these events without passing judgement.
+			If we do this, our quality of life improves.
+			However, if something <em>is</em> within our control, we should "rather act than complain" (Aurelius).
 			</p>
 
-			<p style={{maxWidth:"70ch"}}>
-			"Let there be freedom from perturbations with respect to the things which come from the external cause; and let there be
-			justice in the things done by virtue of the internal cause."
-			Does "Freedom from perturbations" sound like "inner peace" to you? I think it does.
+			<div class="blockquote" style={{maxWidth:"46ch"}}>
+				<p>
+				&ldquo;Let there be freedom from perturbations with respect
+				to the things which come from the external cause;
+				and let there be justice in the things done by virtue
+				of the internal cause.&rdquo;
+				</p>
+				<footer class="blockquote-footer text-dark fade-light">Marcus Aurelius</footer>
+			</div>
+
+
+			<p class="good-width">
+			Does "freedom from perturbations" sounds like "inner peace" to you? I think it does.
 			</p>
 		</ParallaxLayer>
 
@@ -452,7 +530,7 @@ function App() {
 		>
 			<h2>A Second Witness</h2>
 			<p style={{maxWidth:"70ch"}}>
-			Gandhi is another individual who discussed the principle of self-mastery extensively. His concept of "self-purification" is quite similar to what
+			Gandhi is another individual who championed the principle of self-mastery. His concept of "self-purification" is quite similar to what
 we have discussed so far, but with a subtle difference.
 
 			</p>
@@ -486,17 +564,37 @@ we have discussed so far, but with a subtle difference.
 		</ParallaxLayer>
 
 		<ParallaxLayer
-			offset={masteryStart}
-			sticky={{start:masteryStart+5.5, end:masteryStart+6,}}
+			offset={masteryStart+6}
 			style={{backgroundColor:"transparent"}}
+			speed={0.05}
 			className="flex-center p-5 flex-column"
 		>
 			<h2>Personal Example</h2>
-			I exercise but refuse to do competitive sports.
-			I am very pain-averse and naturally do NOT want to physically exert myself. But I do it anyway.
-			I don't particularly care about looking good or being strong,
-			I just like the feeling of using my mind to push my body farther than my body wants to go. But I avoid competition because
-			that doesn't serve any purpose.
+			<p class="good-width">
+				The summer after high school, I began my Latter-day Saint mission.
+			</p>
+			<p class="good-width">
+				I had never lived on my own before my mission. 
+				Once I got into the field, I was faced with more freedom than ever before.
+			</p>
+			<p class="good-width">
+				I abused this freedom by eating an <em>enourmous</em> quantity of candy every day,
+				to the point where my companion tried to have an intervention, but it failed.
+			</p>
+			<p class="good-width">
+				I intellectually knew that eating all this candy was harmful, but my human weakness
+				overpowered my sense of reason and I went on destroying my health.
+			</p>
+			<p class="good-width">
+				Eventually, I realized the error of my ways. It took a lot of time and willpower,
+				but I eventually conquered my candy addiction and now I eat quite healthily.
+			</p>
+			<p class="good-width">
+				What's the moral of the story? 
+			</p>
+			<p class="good-width">
+				Knowing something is great, but it's even better to <em>be true to what you know.</em>
+			</p>
 		</ParallaxLayer>
 
 
@@ -504,7 +602,7 @@ we have discussed so far, but with a subtle difference.
 
 		{/* HELPING OTHERS SECTION */}
 		<ParallaxLayer
-		sticky={{start: helpingStart, end: helpingStart + 5}}
+		sticky={{start: helpingStart, end: helpingStart + 4}}
 		className="p-5 mx-auto flex-center"
 		style={{maxWidth:"52em", zIndex:-100}}
 		>
@@ -604,12 +702,41 @@ we have discussed so far, but with a subtle difference.
 		{/* CONCLUSION SECTION */}
 
 		<ParallaxLayer
-		sticky={{start: conclusionStart, end: conclusionStart + 3.5}}
-		className="p-5"
+		sticky={{start: conclusionStart, end: conclusionStart + 1.5}}
+		className="p-5 d-flex flex-column"
 		>
-		<h1 className="display-1 text-center w-100">Conclusion</h1>
+		<h1 className="display-1 text-center w-100">A scriptural way of looking at it</h1>
+		<div class="flex-center my-auto flex-column">
+			<ol id="scripture-list">
+			<li>
+				God's glory is "the immortality and eternal life of man" (Moses 1:39).
+			</li>
+			<li class="good-width">
+				God's work is "<em>bring[ing] to pass</em>" his glory (Moses 1:39).
+			</li>
+			<li class="good-width">
+				"The glory of God is intelligence" (D&C 93:36).
+			</li>
+			<li class="good-width">
+				Intelligence is the combination of knowledge and acting on that knowledge (D&C 93:24-30)
+			</li>
+			<li class="good-width">
+				Learning = increasing knowledge
+			</li>
+			<li class="good-width">
+				Developing self-mastery = increasing one's ability to act on knowledge
+			</li>
+			<li class="good-width">
+				Therefore, the work and glory of God is:
+				<ol>
+					<li>Learning</li>
+					<li>Developing self-mastery</li>
+					<li>Helping others learn and develop self-mastery</li>
+				</ol>
+			</li>
+			</ol>
+		</div>
 		</ParallaxLayer>
-
 
 		<ParallaxLayer
 		offset={end-1}

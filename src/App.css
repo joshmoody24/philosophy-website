@@ -73,3 +73,16 @@ h1, h2, h3 {
 .fade-light{
   opacity: 80%;
 }
+
+.good-width {
+  width: 100%;
+  max-width: 70ch;
+}
+
+#scripture-list{
+  font-size: 22px;
+}
+
+#scripture-list li{
+  margin-top: 10px;
+}
