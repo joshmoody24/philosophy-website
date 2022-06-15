@@ -14,6 +14,7 @@ export default function FlipCard({
 	width = 400,
 	frontQuote = false,
 	backQuote = false,
+	blur=0,
 }
 ) {	
 
@@ -51,6 +52,7 @@ export default function FlipCard({
 			padding: "2rem",
 			transform: `rotate${direction}(${calcDegrees(flipped)}deg)`,
 			overflow:"hidden",
+			backdropFilter:`blur(${blur})`
 		}}
 	  >
 		{!backQuote && ( <>
@@ -76,7 +78,8 @@ export default function FlipCard({
 			backgroundColor: bgColor,
 			padding: "2rem",
 			transform: `rotate${direction}(${calcDegrees(!flipped)}deg)`,
-			overflow: "hidden"
+			overflow: "hidden",
+			backdropFilter: `blur(${blur})`
 		}}
 	  >
 		{!frontQuote && ( <>

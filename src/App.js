@@ -12,6 +12,7 @@ import service from './img/service.jpg'
 import aurelius from './img/aurelius-bust.jpg'
 import gandhi from './img/gandhi.jpg'
 import universe from './img/universe-4.jpg'
+import cave from './img/cave.jpg'
 
 import { useRef } from 'react';
 
@@ -67,11 +68,11 @@ function App() {
 		speed={0.5}
 		className="flex-center flex-column blend-text"
 		>
-		<h1 className="display-1">Philosophy of Life (working title)</h1>
+		<h1 className="display-1">Leaving the Cave</h1>
 		</ParallaxLayer>
 		
 		<ParallaxLayer
-		offset={introStart + 0.95}
+		offset={introStart + 0.946}
 		speed={-5}
 		style={{display:"flex", justifyContent:"center"}}
 		onClick={() => {
@@ -97,7 +98,7 @@ function App() {
 
 		<ParallaxLayer
 		offset={introStart + 1}
-		speed={.2}
+		speed={.18}
 		className="flex-center flex-column p-5 blend-text"
 		>
 			<h1 className="mb-3">Religious Disclaimer</h1>
@@ -133,13 +134,13 @@ function App() {
 
 		<ParallaxLayer
 		offset={2.43}
-		speed={0.1}
+		speed={0.09}
 		factor={0.5}
 		style={{zIndex:1, maxWidth:"50em"}}
 		className="p-5 flex-center flex-column mx-auto"
 		>
 		<OverlayTrigger placement="bottom" overlay={
-			<Tooltip>The inner sense of being at perfect harmony with the universe. Could also be described as a "fulness of joy."</Tooltip>
+			<Tooltip>The inner sense of being at perfect harmony with the universe. It is equivalent to a "fulness of joy."</Tooltip>
 		}>
 			<h1 className="display-1 text-center w-100 text-light">The Good: Inner Peace</h1>
 		</OverlayTrigger>
@@ -151,8 +152,8 @@ function App() {
 		className="p-5 flex-center flex-column"
 		>
 		<>
-			<h2 className="display-5 text-center w-100 blend-text mt-5" style={{maxWidth:"40ch"}}>
-			The inner sense of being at perfect harmony with the universe. Could also be described as a "fulness of joy."
+			<h2 className="display-5 text-center w-100 blend-text mt-5" style={{maxWidth:"ch"}}>
+			The inner sense of being at perfect harmony with the universe. It is equivalent to a "fulness of joy."
 			</h2>
 		</>
 		</ParallaxLayer>
@@ -320,7 +321,7 @@ function App() {
 				</OverlayTrigger>
 			</li>
 		</ol>		
-		<div class="blockquote">
+		<div className="blockquote">
 			<p>
 				&ldquo;[A] rule of thinking which would absolutely prevent me
 				<br />
@@ -328,7 +329,7 @@ function App() {
 				<br />
 				of truth were really there,</em> would be an irrational rule.&rdquo;
 			</p>
-			<footer class="blockquote-footer text-dark fade-light">William James</footer>
+			<footer className="blockquote-footer text-dark fade-light">William James</footer>
 		</div>
 
 		<p style={{maxWidth:"70ch", width:"100%"}}>
@@ -352,21 +353,21 @@ function App() {
 			style={{backgroundColor:"coral",}}
 			className="flex-center p-5 flex-column"
 		>
-			<p class="good-width">
+			<p className="good-width">
 				If I had to describe myself in 3 words, I would choose "I love learning."
 			</p>
-			<p class="good-width">
+			<p className="good-width">
 			I consider it a moral responsibility to learn throughout life.
 			My decision to attend Brigham Young University had
 			nothing to do with getting a high-paying job.
 			It was entirely motivated by my desire to gain knowledge and develop new skills.
 			</p>
-			<p class="good-width">
+			<p className="good-width">
 				For this reason, I am currently pursuing a master's degree,
 				and will possibly pursue a ph.D. I would keep attending school my entire life
 				if I could (although I doubt BYU would like that very much).
 			</p>
-			<p class="good-width">
+			<p className="good-width">
 				Even if I don't end up pursuing academic education that far,
 				I will seek a career that requires constantly learning new concepts and skills. 
 			</p>
@@ -424,11 +425,11 @@ function App() {
 			className="flex-center flex-column p-5"
 		>
 			<h2>Apply What You Learn</h2>
-			<p class="good-width">
+			<p className="good-width">
 				Learning by itself is not sufficient to produce inner peace and harmony. Knowledge and skills must be used properly.
 				Another way of phrasing "self-mastery" might be "the proper application of what you know."
 			</p>
-			<p class="good-width">
+			<p className="good-width">
 				By nature of being imperfect beings, humans have to wrestle with desires and behaviors that contradict what we know to be true.
 				In order to properly apply knowledge, we must develop control over our passions so we can act in accordance with our knowledge.
 			</p>
@@ -448,7 +449,7 @@ function App() {
 				value: "[P]ain and pleasure... eqully happen to good men and bad, being things which make us neither better nor worse.
 				Therefore they are neither good nor evil."
 			</p>
-			<p class="good-width">
+			<p className="good-width">
 				In other words, the degree to which we experience pain and pleasure is almost entirely out of our control.
 				For this reason, pain and pleasure are irrelevant to our personal growth and should be treated with indifference.
 			</p>
@@ -471,13 +472,13 @@ function App() {
 			className="flex-center flex-column p-5"
 		>
 			<h2>Avoid Complaint and Judgement</h2>
-			<p class="good-width">
+			<p className="good-width">
 			Complaining is another natural human tendency.
 			Aurelius encourages us to avoid complaining and accept those things which are out of our control:
 			"Take away the complaint, 'I have been harmed,' and the harm is taken away."
 			</p>
 
-			<p class="good-width">
+			<p className="good-width">
 			Closely related to complaint is judgment, or the labeling of things as "good" or "bad."
 			Aurelius claims that judgement is the cause of suffering:
 			"If thou art pained by any external thing, it is not this thing that disturbs thee, but thy own judgement about it.
@@ -491,18 +492,18 @@ function App() {
 			However, if something <em>is</em> within our control, we should "rather act than complain" (Aurelius).
 			</p>
 
-			<div class="blockquote" style={{maxWidth:"46ch"}}>
+			<div className="blockquote" style={{maxWidth:"46ch"}}>
 				<p>
 				&ldquo;Let there be freedom from perturbations with respect
 				to the things which come from the external cause;
 				and let there be justice in the things done by virtue
 				of the internal cause.&rdquo;
 				</p>
-				<footer class="blockquote-footer text-dark fade-light">Marcus Aurelius</footer>
+				<footer className="blockquote-footer text-dark fade-light">Marcus Aurelius</footer>
 			</div>
 
 
-			<p class="good-width">
+			<p className="good-width">
 			Does "freedom from perturbations" sounds like "inner peace" to you? I think it does.
 			</p>
 		</ParallaxLayer>
@@ -570,29 +571,29 @@ we have discussed so far, but with a subtle difference.
 			className="flex-center p-5 flex-column"
 		>
 			<h2>Personal Example</h2>
-			<p class="good-width">
+			<p className="good-width">
 				The summer after high school, I began my Latter-day Saint mission.
 			</p>
-			<p class="good-width">
+			<p className="good-width">
 				I had never lived on my own before my mission. 
 				Once I got into the field, I was faced with more freedom than ever before.
 			</p>
-			<p class="good-width">
+			<p className="good-width">
 				I abused this freedom by eating an <em>enourmous</em> quantity of candy every day,
 				to the point where my companion tried to have an intervention, but it failed.
 			</p>
-			<p class="good-width">
+			<p className="good-width">
 				I intellectually knew that eating all this candy was harmful, but my human weakness
 				overpowered my sense of reason and I went on destroying my health.
 			</p>
-			<p class="good-width">
+			<p className="good-width">
 				Eventually, I realized the error of my ways. It took a lot of time and willpower,
 				but I eventually conquered my candy addiction and now I eat quite healthily.
 			</p>
-			<p class="good-width">
+			<p className="good-width">
 				What's the moral of the story? 
 			</p>
-			<p class="good-width">
+			<p className="good-width">
 				Knowing something is great, but it's even better to <em>be true to what you know.</em>
 			</p>
 		</ParallaxLayer>
@@ -622,6 +623,8 @@ we have discussed so far, but with a subtle difference.
 				body="If it is in one's power to help others, it is morally necessary to do so. This help
 				should be given in a spirit of nonjudgmental love."
 				title="Judge not"
+				blur={"5px"}
+				bgColor="#a337"
 			>
 			</FlipCard>
 		</ParallaxLayer>
@@ -640,6 +643,8 @@ we have discussed so far, but with a subtle difference.
 				backTitle="Dietrich Bonhoeffer"
 				backBody="To serve our brother, to please him, to allow him his due and to let him live, is the way of self-denial, the way of the cross.
 				Greater love hath no man that this, that a man lay down his life for his friends."
+				bgColor="#a917"
+				blur="5px"
 			>
 			</FlipCard>
 		</ParallaxLayer>
@@ -652,8 +657,8 @@ we have discussed so far, but with a subtle difference.
 		>
 			<FlipCard
 				title="Don't overdo it"
-				body="Don't stress about helping people who are outside of your control. Sure, care about them. Don't be a monster. But don't beat yourelf up
-				for having limited means. (personal experience from that one essay)."
+				body="Don't stress about helping people who are outside of your control. Yes, care about them. But don't beat yourelf up for 
+				for having limited means."
 				backQuote={true}
 				backTitle="Anne Lindbergh"
 				backBody="We are asked today to feel compassionately for everyone in the world; to digest intellectually all the information spread
@@ -662,6 +667,8 @@ we have discussed so far, but with a subtle difference.
 				loads us with more problems than the human frame can carry."
 				height={430}
 				width={430}
+				bgColor="#33a7"
+				blur="5px"
 			>
 			</FlipCard>
 		</ParallaxLayer>
@@ -670,7 +677,7 @@ we have discussed so far, but with a subtle difference.
 		offset={helpingStart + 1.98}
 		speed={0.61}
 		factor={1}
-		style={{backgroundColor:"transparent", marginLeft: "67%"}}
+		style={{backgroundColor:"transparent", marginLeft: "65.5%"}}
 		>
 			<FlipCard
 				title="What if they don't want help?"
@@ -681,6 +688,8 @@ we have discussed so far, but with a subtle difference.
 				backTitle="William James"
 				backBody="We ought... delicately and profoundly to respect one another's mental freedom:
 				then only shall we bring about the intellectual republic."
+				blur="5px"
+				bgColor="#2a37"
 
 			>
 			</FlipCard>
@@ -693,7 +702,29 @@ we have discussed so far, but with a subtle difference.
 		style={{backgroundColor:"transparent", marginLeft: "19%"}}
 		>
 			<FlipCard
-				body="One more quote here"
+				height="500px"
+				width="500px"
+				title="Personal Experience"
+				body={<>After returning home from my mission, I felt a constant pressure to help others in every way I could.
+				I would constantly receive impressions to reach out to people in my ward,
+				call old friends, and donate money to charitable causes.
+				However, these impressions came so frequently that I struggled to keep up with them.
+				Additionally, I discovered many new social issues to care about and felt the need to contribute
+				despite lacking the time or resources to do so. I became discouraged at my inability to help others to the extent I wanted.
+				<br /><br /><span className="text-center">(continued on back)</span></>}
+				backTitle="Personal Experience Continued"
+				backBody="
+				This changed one day as I was reading The Screwtape Letters by C.S. Lewis.
+				In this book, a devil explains that one of the most effective ways to keep
+				a person out of heaven is to convince him to
+				“thrust his benevolence out to the remote circumference, to people he does not
+				know…thus…the benevolence [becomes] largely imaginary.” This hit me hard.
+				I was feeling a distant pseudo-love for people I hardly knew,
+				but I was neglecting the people I was closest to, especially my immediate
+				family and closest friends. I decided to prioritize the people who were in my life at that very moment.
+				This change in mindset allowed me to serve others much more effectively. It also improved my mental well-being considerably."
+				bgColor="#7177"
+				blur="8px"
 			>
 			</FlipCard>
 		</ParallaxLayer>
@@ -705,31 +736,31 @@ we have discussed so far, but with a subtle difference.
 		sticky={{start: conclusionStart, end: conclusionStart + 1.5}}
 		className="p-5 d-flex flex-column"
 		>
-		<h1 className="display-1 text-center w-100">A scriptural way of looking at it</h1>
-		<div class="flex-center my-auto flex-column">
+		<h1 className="display-1 text-center w-100">A scriptural conclusion</h1>
+		<div className="flex-center my-auto flex-column">
 			<ol id="scripture-list">
 			<li>
 				God's glory is "the immortality and eternal life of man" (Moses 1:39).
 			</li>
-			<li class="good-width">
+			<li className="good-width">
 				God's work is "<em>bring[ing] to pass</em>" his glory (Moses 1:39).
 			</li>
-			<li class="good-width">
+			<li className="good-width">
 				"The glory of God is intelligence" (D&C 93:36).
 			</li>
-			<li class="good-width">
+			<li className="good-width">
 				Intelligence is the combination of knowledge and acting on that knowledge (D&C 93:24-30)
 			</li>
-			<li class="good-width">
+			<li className="good-width">
 				Learning = increasing knowledge
 			</li>
-			<li class="good-width">
+			<li className="good-width">
 				Developing self-mastery = increasing one's ability to act on knowledge
 			</li>
-			<li class="good-width">
+			<li className="good-width">
 				Therefore, the work and glory of God is:
 				<ol>
-					<li>Learning</li>
+					<li>Learning as much as possible</li>
 					<li>Developing self-mastery</li>
 					<li>Helping others learn and develop self-mastery</li>
 				</ol>
